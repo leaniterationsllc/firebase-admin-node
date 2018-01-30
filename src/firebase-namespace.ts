@@ -27,10 +27,6 @@ import {
 } from './auth/credential';
 
 import {Auth} from './auth/auth';
-import {Messaging} from './messaging/messaging';
-import {Storage} from './storage/storage';
-import {Database} from '@firebase/database';
-import {Firestore} from '@google-cloud/firestore';
 import {InstanceId} from './instance-id/instance-id';
 
 import * as validator from './utils/validator';
@@ -338,54 +334,6 @@ export class FirebaseNamespace {
       return ns.ensureApp(app).auth();
     };
     return Object.assign(fn, {Auth});
-  }
-
-  /**
-   * Gets the `Database` service namespace. The returned namespace can be used to get the
-   * `Database` service for the default app or an explicitly specified app.
-   */
-  get database(): FirebaseServiceNamespace<Database> {
-    const ns: FirebaseNamespace = this;
-    let fn: FirebaseServiceNamespace<Database> = (app?: FirebaseApp) => {
-      return ns.ensureApp(app).database();
-    };
-    return Object.assign(fn, require('@firebase/database'));
-  }
-
-  /**
-   * Gets the `Messaging` service namespace. The returned namespace can be used to get the
-   * `Messaging` service for the default app or an explicitly specified app.
-   */
-  get messaging(): FirebaseServiceNamespace<Messaging> {
-    const ns: FirebaseNamespace = this;
-    let fn: FirebaseServiceNamespace<Messaging> = (app?: FirebaseApp) => {
-      return ns.ensureApp(app).messaging();
-    };
-    return Object.assign(fn, {Messaging});
-  }
-
-  /**
-   * Gets the `Storage` service namespace. The returned namespace can be used to get the
-   * `Storage` service for the default app or an explicitly specified app.
-   */
-  get storage(): FirebaseServiceNamespace<Storage> {
-    const ns: FirebaseNamespace = this;
-    let fn: FirebaseServiceNamespace<Storage> = (app?: FirebaseApp) => {
-      return ns.ensureApp(app).storage();
-    };
-    return Object.assign(fn, {Storage});
-  }
-
-  /**
-   * Gets the `Firestore` service namespace. The returned namespace can be used to get the
-   * `Firestore` service for the default app or an explicitly specified app.
-   */
-  get firestore(): FirebaseServiceNamespace<Firestore> {
-    const ns: FirebaseNamespace = this;
-    let fn: FirebaseServiceNamespace<Firestore> = (app?: FirebaseApp) => {
-      return ns.ensureApp(app).firestore();
-    };
-    return Object.assign(fn, require('@google-cloud/firestore'));
   }
 
   /**

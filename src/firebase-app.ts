@@ -23,12 +23,6 @@ import {FirebaseNamespaceInternals} from './firebase-namespace';
 import {AppErrorCodes, FirebaseAppError} from './utils/error';
 
 import {Auth} from './auth/auth';
-import {Messaging} from './messaging/messaging';
-import {Storage} from './storage/storage';
-import {Database} from '@firebase/database';
-import {DatabaseService} from './database/database';
-import {Firestore} from '@google-cloud/firestore';
-import {FirestoreService} from './firestore/firestore';
 import {InstanceId} from './instance-id/instance-id';
 
 /**
@@ -289,47 +283,6 @@ export class FirebaseApp {
     return this.ensureService_('auth', () => {
       return new Auth(this);
     });
-  }
-
-  /**
-   * Returns the Database service for the specified URL, and the current app.
-   *
-   * @return {Database} The Database service instance of this app.
-   */
-  public database(url?: string): Database {
-    let service: DatabaseService = this.ensureService_('database', () => {
-      return new DatabaseService(this);
-    });
-    return service.getDatabase(url);
-  }
-
-  /**
-   * Returns the Messaging service instance associated with this app.
-   * 
-   * @return {Messaging} The Messaging service instance of this app.
-   */
-  public messaging(): Messaging {
-    return this.ensureService_('messaging', () => {
-      return new Messaging(this);
-    });
-  }
-
-  /**
-   * Returns the Storage service instance associated with this app.
-   * 
-   * @return {Storage} The Storage service instance of this app.
-   */
-  public storage(): Storage {
-    return this.ensureService_('storage', () => {
-      return new Storage(this);
-    });
-  }
-
-  public firestore(): Firestore {
-    let service: FirestoreService = this.ensureService_('firestore', () => {
-      return new FirestoreService(this);
-    });
-    return service.client;
   }
 
   /**

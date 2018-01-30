@@ -32,18 +32,6 @@ import './auth/user-record.spec';
 import './auth/token-generator.spec';
 import './auth/auth-api-request.spec';
 
-// Database
-import './database/database.spec';
-
-// Messaging
-import './messaging/messaging.spec';
-
-// Storage
-import './storage/storage.spec';
-
-// Firestore
-import './firestore/firestore.spec';
-
 // InstanceId
 import './instance-id/instance-id.spec';
 import './instance-id/instance-id-request.spec';
