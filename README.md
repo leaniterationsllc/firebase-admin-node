@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/firebase/firebase-admin-node.svg?branch=master)](https://travis-ci.org/firebase/firebase-admin-node)
 
-# Firebase Admin Node.js SDK
+# Firebase Admin Auth Node.js SDK
+This is a fork of the [firebase admin](https://github.com/firebase/firebase-admin-node) project. It only contains the authentication simplify the package size.
 
 
 ## Table of Contents

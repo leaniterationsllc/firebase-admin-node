@@ -1,7 +1,7 @@
 {
-  "name": "firebase-admin",
-  "version": "5.8.1",
-  "description": "Firebase admin SDK for Node.js",
+  "name": "firebase-admin-auth",
+  "version": "1.0.0",
+  "description": "A fork of Firebase admin SDK for Node.js that only has the auth module.",
   "author": "Firebase <firebase-support@google.com> (https://firebase.google.com/)",
   "license": "Apache-2.0",
   "homepage": "https://firebase.google.com/",
